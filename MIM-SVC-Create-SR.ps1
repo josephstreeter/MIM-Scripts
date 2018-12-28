@@ -45,13 +45,13 @@ $PersistentFlow = @(
 New-FimSynchronizationRule `
     -DisplayName '!AD-Users-Active-Outbound' `
     -Description 'Active Directory Outbound Sync Rules for Active users' `
-    -ManagementAgentID ('ma-data','DisplayName','ADMA-Test') `
+    -Direction 'Outbound' `
+    -ManagementAgentID ('ma-data','DisplayName','AD-MA') `
     -ConnectedObjectType 'user' `
     -ILMObjectType 'person' `
     -DisconnectConnectedSystemObject $False `
     -CreateConnectedSystemObject $true `
     -CreateILMObject $False `
-    -FlowType '1' `
     -Precedence '1' `
     -RelationshipCriteria $RelationshipCriteria `
     -msidmOutboundIsFilterBased $False `
